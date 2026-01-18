@@ -17,20 +17,22 @@ const Navbar = ({ isAuth }: NavbarProps) => {
         <FontAwesomeIcon icon={faHouse} />
         ホーム
       </NavLink>
-      <NavLink to="/createpost" className="px-2">
-        <FontAwesomeIcon icon={faFilePen} />
-        記事投稿
-      </NavLink>
       {!isAuth ? (
         <NavLink to="/login" className="px-2">
           <FontAwesomeIcon icon={faArrowRightToBracket} />
           ログイン
         </NavLink>
       ) : (
-        <NavLink to="/logout" className="px-2">
-          <FontAwesomeIcon icon={faArrowRightToBracket} />
-          ログアウト
-        </NavLink>
+        <>
+          <NavLink to="/createpost" className="px-2">
+            <FontAwesomeIcon icon={faFilePen} />
+            記事投稿
+          </NavLink>
+          <NavLink to="/logout" className="px-2">
+            <FontAwesomeIcon icon={faArrowRightToBracket} />
+            ログアウト
+          </NavLink>
+        </>
       )}
     </nav>
   );
